@@ -16,7 +16,13 @@ c) you may encouter this type of error:
 Try to reinstall the libhdf5 library:
 #sudo apt-get install libhdf5-serial-dev
 #sudo ldconfig
-and modify the Makefile.config (this is the critical step)
-LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial
+
+cd /usr/lib/x86_64-linux-gnu/ 
+rm libhdf5_hl.so
+sudo ln -s libhdf5_serial_hl.so.10.0.2 libhdf5_hl.so
+
+////this nolonger work///
+////(and modify the Makefile.config (this is the critical step)
+///LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial)
 
 d) you must install CUDA library, even if you plan to use CPU only
