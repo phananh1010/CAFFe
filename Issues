@@ -1,0 +1,18 @@
+If you are using Ubuntu 14 or 16, chance that you will have alot of problem with installation. Here are some notes
+
+a) This link is default installation guide:
+http://caffe.berkeleyvision.org/install_apt.html
+It is a bit confusing. Before compling the source code, you should download the git source first:
+#git clone https://github.com/BVLC/caffe
+#cp Makefile.config.example Makefile.config
+
+b) OpenCV can be unnecessary complicated (try some top Google link for key work "install opencv 3"). Instead, use this tutorial:
+https://gist.github.com/titipata/f0ef48ad2f0ebc07bcb9
+
+c) you may encouter this type of error:
+Try to reinstall the libhdf5 library:
+#sudo apt-get install libhdf5-serial-dev
+#sudo ldconfig
+and modify the Makefile.config (this is the critical step)
+LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial
+
