@@ -21,6 +21,7 @@ cd /usr/lib/x86_64-linux-gnu/
 rm libhdf5_hl.so
 sudo ln -s libhdf5_serial_hl.so.10.0.2 libhdf5_hl.so
 
+check this link: https://github.com/BVLC/caffe/issues/4333
 ////this nolonger work///
 ////(and modify the Makefile.config (this is the critical step)
 ///LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial)
