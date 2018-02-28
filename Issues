@@ -27,3 +27,9 @@ check this link: https://github.com/BVLC/caffe/issues/4333
 ///LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial)
 
 d) you must install CUDA library, even if you plan to use CPU only
+
+e) Careful uncomment all anaconda path if you are using anaconda, including line 3 and 4 (I missed this part and it took me few hours)
+# ANACONDA_HOME := $(HOME)/anaconda
+# PYTHON_INCLUDE := $(ANACONDA_HOME)/include \
+        # $(ANACONDA_HOME)/include/python2.7 \
+        # $(ANACONDA_HOME)/lib/python2.7/site-packages/numpy/core/include \
