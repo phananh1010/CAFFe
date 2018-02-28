@@ -10,6 +10,9 @@ b) OpenCV can be unnecessary complicated (try some top Google link for key work 
 https://gist.github.com/titipata/f0ef48ad2f0ebc07bcb9
 
 c) you may encouter this type of error:
+
+/usr/bin/ld: cannot find -lhdf5_hl
+
 Try to reinstall the libhdf5 library:
 #sudo apt-get install libhdf5-serial-dev
 #sudo ldconfig
