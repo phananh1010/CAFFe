@@ -1,0 +1,4 @@
+#During installation, the CUDA may be incompatible with tensorflow version. 
+Check this link:
+https://www.tensorflow.org/install/gpu
+Note: individual package should be manually installed.
