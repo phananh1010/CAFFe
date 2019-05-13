@@ -9,8 +9,9 @@ Download source code from official Github:
 git clone https://github.com/BVLC/caffe.git
 
 ### Step 2
-Install dependencies: protobuf, glog, boost, gflags, hdf5, lmdb, opencv, leveldb
+Install dependencies: protobuf, blas, glog, boost, gflags, hdf5, lmdb, opencv, leveldb
 sudo apt-get install protobuf-compiler
+sudo apt-get install libblas-dev liblapack-dev
 sudo apt-get install libprotobuf-dev
 sudo apt-get install libgoogle-glog-dev
 sudo apt-get install libboost-all-dev
@@ -19,6 +20,7 @@ sudo apt-get install libhdf5-serial-dev
 sudo apt-get install liblmdb-dev
 sudo apt-get install libopencv-core-dev
 sudo apt-get install libleveldb-dev
+sudo apt-get install libatlas-base-dev
 
 Install OpenCV
 wget https://raw.githubusercontent.com/jayrambhia/Install-OpenCV/master/Ubuntu/2.4/opencv2_4_9.sh
@@ -47,5 +49,7 @@ Then modify the Makefile.config as following:
 INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial/
 
+There may be another error during linking.
+To solve this error, add following libraries: opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs into the end of this line (line 181)
 
-
+`LIBRARIES += glog gflags protobuf boost_system boost_filesystem m`
