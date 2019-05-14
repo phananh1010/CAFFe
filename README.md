@@ -39,7 +39,7 @@ Prepare the Makefile.config file by using the template Makefile.config.example
 
 Modify the Makefile.config and remove the comment for Anaconda (if you are using the anaconda library)
 
-There is a bug with the hdf5 library. The error is something similar to this:
+1) There is a bug with the hdf5 library. The error is something similar to this:
 ```
 In file included from src/caffe/solver.cpp:9:0:
 ./include/caffe/util/hdf5.hpp:7:10: fatal error: hdf5.h: No such file or directory
@@ -58,7 +58,25 @@ Then modify the Makefile.config as following:
 INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial/
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial/
 ```
-There may be another error during linking.
-To solve this error, add following libraries: opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs into the end of this line (line 181)
+2) There may be another error during linking. To solve this error, add following libraries: opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs into the end of this line (line 181)
 
 `LIBRARIES += glog gflags protobuf boost_system boost_filesystem m`
+
+### Step 4
+To use caffe in Python language, first run the make pycaffe inside source code directory: 
+`make pycaffe`
+Then, add the python folder into PYTHONPATH environment variable
+`export PYTHONPATH=<path_to_caffe_sourcecode>/caffe/python:$PYTHONPATH`
+
+1) When you import caffe inside your Python source code, there maybe an error like this:
+```
+ImportError: libhdf5_hl.so.100: cannot open shared object file: No such file or directory
+```
+and this:
+`ImportError: libhdf5.so.101: cannot open shared object file: No such file or directory`
+To fix it, type in this command
+```
+cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libhdf5_serial.so.100.0.1 libhdf5.so.101
+sudo ln -s libhdf5_serial_hl.so.100 libhdf5_hl.so.100
+```
