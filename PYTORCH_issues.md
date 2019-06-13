@@ -13,8 +13,10 @@ Step 2: install pytorch packages
 
 Step 3: check environment path to see if the packages have been installed
 
-`conda list`
-`which python`
+```
+conda list
+which python
+```
 
 Note: recently, conda automatically activate base environment. This maybe annoying since your environment path will be overrided by the base environment.
 To force conda to use your customize environment path, use the following command:
