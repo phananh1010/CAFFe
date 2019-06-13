@@ -2,8 +2,10 @@ Conda is one of the most convinient way to install pytorch. If you have conda in
 
 Step1: create & activate conda environment:
 
-`conda create -n env_torch python=2.7`
-`conda activate env_torch`
+```
+conda create -n env_torch python=2.7
+conda activate env_torch
+```
 
 Step 2: install pytorch packages
 
