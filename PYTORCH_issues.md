@@ -2,6 +2,6 @@ Conda is one of the most convinient way to install pytorch. If you have conda in
 
 Note: recently, conda automatically activate base environment. This maybe annoying since your environment path will be overrided by the base.
 To force conda to use your environment path, use the following command:
-```
+
 conda config --set auto_activate_base false
-```
+
