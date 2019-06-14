@@ -1,4 +1,6 @@
-Conda is one of the most convinient way to install pytorch. If you have conda in your system, then installing Pytorch is just in few steps.
+This installation approach allows you to install Pytorch and related packages in your local directory. No admin permission required. The only requirement is conda has been installed into the system.
+
+Conda is one of the most convinient way to install pytorch. If you have conda in your system, then installing Pytorch is just in few steps. 
 
 Step1: create & activate conda environment:
 
