@@ -18,8 +18,13 @@ conda list
 which python
 ```
 
-Note: recently, conda automatically activate base environment. This maybe annoying since your environment path will be overrided by the base environment.
+Note: 
+- Recently, conda automatically activate base environment. This maybe annoying since your environment path will be overrided by the base environment.
 To force conda to use your customize environment path, use the following command:
-
 `conda config --set auto_activate_base false`
+- If you want your environment to be added into yupiter notebook, use following command (ipykernel packge required):
+```
+source activate env_pytorch
+python -m ipykernel install --user --name env_pytorch --display-name "Python (env_pytorch)"
+```
 
